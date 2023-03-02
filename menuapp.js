@@ -84,14 +84,6 @@ class ShoeMenu { // what drives the application and our choices
         `);
     }
     
-    displayStyles() {
-        let styleString = '';
-            for (let i = 0; i < this.styles.length; i++) {
-            styleString += i+ ') ' + this.styles[i].modelName + '\n';
-            }
-        alert(styleString);
-    }
-    
     createStyle() {
         let name = prompt('Enter the new style you would like to create: ');
         this.styles.push(new Style(name));
@@ -122,8 +114,17 @@ class ShoeMenu { // what drives the application and our choices
     removeStyle() {
         let styleIndex = prompt('Enter the index of the style of shoe you wish to remove: ');
         if (styleIndex > -1 && styleIndex < this.styles.length) {
-            this.styles.splice(index,1);
+            this.styles.splice(styleIndex,1);
         }
+        alert("This style has been removed from the app.");
+    }
+    displayStyles() {
+        let styleString = "";
+        for (let i = 0; i < this.styles.length; i++){
+            styleString += i + ") " + this.styles[i].styleName + "\n";
+            
+        }
+        alert(styleString);
     }
     
     
